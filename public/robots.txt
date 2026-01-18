@@ -1,3 +1,8 @@
+# Allow all search engines and crawlers
+User-agent: *
+Allow: /
+
+# Specific rules for search engines
 User-agent: Googlebot
 Allow: /
 
@@ -10,5 +15,14 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
-User-agent: *
-Allow: /
+# Crawl delay to prevent server overload
+Crawl-delay: 1
+
+# Sitemap location for better indexing
+Sitemap: https://gundaroo-fresh-connect.netlify.app/sitemap.xml
+
+# Disallow admin and private directories (if any)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$
+Disallow: /*.pdf$
