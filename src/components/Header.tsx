@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import logoImg from "@/assets/logo.jpeg";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -48,18 +49,12 @@ const Header = () => {
             className="flex items-center gap-3"
             whileHover={{ scale: 1.02 }}
           >
-            <div
-              className={`w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-300 ${
-                isScrolled ? "bg-primary" : "bg-white/20 backdrop-blur-sm"
-              }`}
-            >
-              <span
-                className={`font-bold text-lg ${
-                  isScrolled ? "text-primary-foreground" : "text-white"
-                }`}
-              >
-                G
-              </span>
+            <div className="w-14 h-14 rounded-full flex items-center justify-center overflow-hidden">
+              <img
+                src={logoImg}
+                alt="Gundaroo Logo"
+                className="w-full h-full object-cover"
+              />
             </div>
             <div>
               <h1
