@@ -53,12 +53,12 @@ const ContactSection = () => {
     {
       icon: Phone,
       title: "Phone",
-      content: "+61 2 6236 8888",
+      content: "+61 414 294 611",
     },
     {
       icon: Mail,
       title: "Email",
-      content: "info@gundaroozucchini.com.au",
+      content: "Jabal.halal@gmail.com",
     },
   ];
 
