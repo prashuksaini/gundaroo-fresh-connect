@@ -15,6 +15,27 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Handle hash navigation
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash;
+      if (hash) {
+        const element = document.querySelector(hash);
+        if (element) {
+          setTimeout(() => {
+            element.scrollIntoView({ behavior: "smooth", block: "start" });
+          }, 100);
+        }
+      }
+    };
+
+    window.addEventListener("hashchange", handleHashChange);
+    // Also handle initial hash on load
+    handleHashChange();
+
+    return () => window.removeEventListener("hashchange", handleHashChange);
+  }, []);
+
   const navLinks = [
     { href: "#home", label: "Home" },
     { href: "#about", label: "About Us" },
@@ -23,14 +44,6 @@ const Header = () => {
     { href: "#team", label: "Team" },
     { href: "#contact", label: "Contact" },
   ];
-
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-    setIsMenuOpen(false);
-  };
 
   return (
     <motion.header
@@ -77,12 +90,12 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
             {navLinks.map((link, index) => (
-              <motion.button
+              <motion.a
                 key={link.href}
+                href={link.href}
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 * index }}
-                onClick={() => scrollToSection(link.href)}
                 className={`text-sm font-medium transition-colors relative group ${
                   isScrolled
                     ? "text-muted-foreground hover:text-primary"
@@ -95,7 +108,7 @@ const Header = () => {
                     isScrolled ? "bg-primary" : "bg-white"
                   }`}
                 />
-              </motion.button>
+              </motion.a>
             ))}
           </nav>
 
@@ -124,16 +137,17 @@ const Header = () => {
             >
               <div className="py-4">
                 {navLinks.map((link, index) => (
-                  <motion.button
+                  <motion.a
                     key={link.href}
+                    href={link.href}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.05 * index }}
-                    onClick={() => scrollToSection(link.href)}
-                    className="w-full py-3 px-4 text-left text-sm font-medium text-muted-foreground hover:text-primary hover:bg-muted rounded-md transition-colors"
+                    onClick={() => setIsMenuOpen(false)}
+                    className="block w-full py-3 px-4 text-left text-sm font-medium text-muted-foreground hover:text-primary hover:bg-muted rounded-md transition-colors"
                   >
                     {link.label}
-                  </motion.button>
+                  </motion.a>
                 ))}
               </div>
             </motion.nav>
