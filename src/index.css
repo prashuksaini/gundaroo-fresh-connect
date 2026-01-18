@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 
+  Design System: Gundaroo Freshest Zucchini
+  Agriculture Business Website
+  
+  Color Philosophy:
+  - Primary: Deep forest green (growth, sustainability, agriculture)
+  - Secondary: Warm earth tones (reliability, groundedness)
+  - Accent: Golden harvest (success, warmth)
+  - Neutrals: Clean whites and charcoals for professionalism
+*/
+
+@layer base {
+  :root {
+    /* Background & Foreground */
+    --background: 0 0% 100%;
+    --foreground: 150 10% 15%;
+
+    /* Cards & Popovers */
+    --card: 0 0% 100%;
+    --card-foreground: 150 10% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 150 10% 15%;
+
+    /* Primary - Deep Forest Green */
+    --primary: 152 45% 28%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - Warm Earth */
+    --secondary: 35 30% 94%;
+    --secondary-foreground: 150 10% 15%;
+
+    /* Muted - Soft Gray */
+    --muted: 150 10% 96%;
+    --muted-foreground: 150 5% 45%;
+
+    /* Accent - Light Sage */
+    --accent: 150 20% 95%;
+    --accent-foreground: 152 45% 28%;
+
+    /* Destructive */
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders & Inputs */
+    --border: 150 10% 90%;
+    --input: 150 10% 90%;
+    --ring: 152 45% 28%;
+
+    --radius: 0.5rem;
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 150 10% 25%;
+    --sidebar-primary: 152 45% 28%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 150 20% 95%;
+    --sidebar-accent-foreground: 152 45% 28%;
+    --sidebar-border: 150 10% 90%;
+    --sidebar-ring: 152 45% 28%;
+
+    /* Custom - Section Alternate Background */
+    --section-alt: 150 15% 97%;
+  }
+
+  .dark {
+    --background: 150 10% 10%;
+    --foreground: 0 0% 95%;
+    --card: 150 10% 12%;
+    --card-foreground: 0 0% 95%;
+    --popover: 150 10% 12%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 152 45% 45%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 150 10% 18%;
+    --secondary-foreground: 0 0% 95%;
+    --muted: 150 10% 18%;
+    --muted-foreground: 150 5% 60%;
+    --accent: 150 10% 18%;
+    --accent-foreground: 152 45% 45%;
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 150 10% 20%;
+    --input: 150 10% 20%;
+    --ring: 152 45% 45%;
+    --sidebar-background: 150 10% 8%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 152 45% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 150 10% 15%;
+    --sidebar-accent-foreground: 152 45% 45%;
+    --sidebar-border: 150 10% 20%;
+    --sidebar-ring: 152 45% 45%;
+    --section-alt: 150 10% 8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
+
+@layer utilities {
+  .font-heading {
+    font-family: 'Merriweather', serif;
+  }
+
+  .font-sans {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  .bg-hero-gradient {
+    background: linear-gradient(
+      180deg,
+      hsl(var(--accent)) 0%,
+      hsl(var(--background)) 100%
+    );
+  }
+
+  .bg-section-alt {
+    background-color: hsl(var(--section-alt));
+  }
+}
