@@ -1,44 +1,39 @@
 import { useState } from "react";
 import { motion, AnimatePresence, easeOut } from "framer-motion";
 import { X } from "lucide-react";
-import sample1 from "@/assets/sample1.jpeg";
-import sample2 from "@/assets/sample2.jpeg";
-import sample3 from "@/assets/sample3.jpeg";
-import sample4 from "@/assets/sample4.jpeg";
-import sample5 from "@/assets/sample5.jpeg";
 
 const galleryItems = [
   {
     id: 1,
-    image: sample1,
+    image: "/sample1.jpeg",
     title: "Agricultural Field",
     description: "Modern farming techniques in action",
     category: "Farming",
   },
   {
     id: 2,
-    image: sample2,
+    image: "/sample2.jpeg",
     title: "Crop Management",
     description: "Sustainable crop production methods",
     category: "Sustainability",
   },
   {
     id: 3,
-    image: sample3,
+    image: "/sample3.jpeg",
     title: "Farm Operations",
     description: "Professional farm management",
     category: "Operations",
   },
   {
     id: 4,
-    image: sample4,
+    image: "/sample4.jpeg",
     title: "Team Work",
     description: "Dedicated agricultural professionals",
     category: "Team",
   },
   {
     id: 5,
-    image: sample5,
+    image: "/sample5.jpeg",
     title: "Innovation",
     description: "Advanced farming solutions",
     category: "Technology",
@@ -263,7 +258,7 @@ const GallerySection = () => {
                 {/* Image Container - Mobile */}
                 <div className="relative w-full flex-1 bg-black overflow-y-auto">
                   <img
-                    src={galleryItems.find((item) => item.id === selectedImage)?.image}
+                    src={galleryItems.find((item) => item.id === selectedImage)?.image || ""}
                     alt="Expanded view"
                     className="w-full h-auto object-contain"
                   />
@@ -324,7 +319,7 @@ const GallerySection = () => {
               >
                 {/* Image - Desktop */}
                 <img
-                  src={galleryItems.find((item) => item.id === selectedImage)?.image}
+                  src={galleryItems.find((item) => item.id === selectedImage)?.image || ""}
                   alt="Expanded view"
                   className="w-full h-full object-cover max-h-[80vh]"
                 />

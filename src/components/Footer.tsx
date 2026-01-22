@@ -1,6 +1,4 @@
 import { motion } from "framer-motion";
-import mapImg from "@/assets/map.jpeg";
-import logoImg from "@/assets/logo.jpeg";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -20,7 +18,7 @@ const Footer = () => {
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-10 h-10 rounded-full flex items-center justify-center overflow-hidden">
                   <img
-                    src={logoImg}
+                    src="/logo.jpeg"
                     alt="Gundaroo Logo"
                     className="w-full h-full object-cover"
                   />
@@ -84,7 +82,7 @@ const Footer = () => {
               className="md:col-span-2 rounded-lg overflow-hidden shadow-lg"
             >
               <img
-                src={mapImg}
+                src="/map.jpeg"
                 alt="Location Map"
                 className="w-full h-auto object-cover"
               />

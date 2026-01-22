@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import logoImg from "@/assets/logo.jpeg";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -64,7 +63,7 @@ const Header = () => {
           >
             <div className="w-14 h-14 rounded-full flex items-center justify-center overflow-hidden">
               <img
-                src={logoImg}
+                src="/logo.jpeg"
                 alt="Gundaroo Logo"
                 className="w-full h-full object-cover"
               />

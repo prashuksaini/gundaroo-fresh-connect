@@ -1,7 +1,5 @@
 import { MapPin, Leaf, Target } from "lucide-react";
 import { motion } from "framer-motion";
-import zucchiniHarvest from "@/assets/zucchini-harvest.jpg";
-import soilAnalysis from "@/assets/soil-analysis.jpg";
 
 const AboutSection = () => {
   return (
@@ -66,7 +64,7 @@ const AboutSection = () => {
                 className="mt-6 rounded-xl overflow-hidden shadow-lg"
               >
                 <img
-                  src={zucchiniHarvest}
+                  src="/zucchini-harvest.jpg"
                   alt="Fresh zucchini harvest in wooden crate"
                   className="w-full h-48 object-cover hover:scale-105 transition-transform duration-500"
                 />
@@ -83,7 +81,7 @@ const AboutSection = () => {
               {/* Image at top */}
               <div className="rounded-xl overflow-hidden shadow-lg">
                 <img
-                  src={soilAnalysis}
+                  src="/soil-analysis.jpg"
                   alt="Agriculture consultant examining soil"
                   className="w-full h-48 object-cover hover:scale-105 transition-transform duration-500"
                 />

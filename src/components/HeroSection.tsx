@@ -1,6 +1,5 @@
 import { ArrowDown } from "lucide-react";
 import { motion } from "framer-motion";
-import heroFarm from "@/assets/hero-farm.jpg";
 
 const HeroSection = () => {
   const scrollToAbout = () => {
@@ -18,7 +17,7 @@ const HeroSection = () => {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
-          src={heroFarm}
+          src="/hero-farm.jpg"
           alt="Zucchini farm fields at sunrise"
           className="w-full h-full object-cover"
         />
